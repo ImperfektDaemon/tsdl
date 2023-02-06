@@ -2778,6 +2778,11 @@ type event_type = int
 type event
 (** {{:http://wiki.libsdl.org/SDL_Event}SDL_Event} *)
 
+(**/**)
+val unsafe_event_of_ptr : nativeint -> event
+val unsafe_ptr_of_event : event -> nativeint
+(**/**)
+
 (** {!event} accessors and {!event_type} constants and
     {{!Event.type-enum}enumeration}. *)
 module Event : sig

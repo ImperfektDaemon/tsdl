@@ -4534,6 +4534,11 @@ end
 
 type event = Event.t union
 
+let unsafe_event_of_ptr addr : event =
+  ptr_of_raw_address addr
+let unsafe_ptr_of_event event =
+  raw_address_of_ptr (to_voidp event)
+
 let event_state =
   foreign "SDL_EventState" (event_type @-> int @-> returning int_as_uint8_t)
 
